@@ -1,2 +1,9 @@
-# CSDN-Copyman
-Press S and click to copy content without login.
+## CSDN Copyman
+
+### 使用方式
+- 按住S键并单击想要复制的内容进行复制
+
+### 可能遇到的问题
+- 按下S键后(不松开)切屏回来或者弹出复制内容窗口后松开S再点确定会导致一直有点击事件，目前提供两种方法解决：
+  - 再次按一下S键(推荐)
+  - 刷新页面
