@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CSDN Copyman
 // @namespace    http://tampermonkey.net/
-// @version      0.1.1
+// @version      0.1.3
 // @description  Press S and click to copy without login
 // @author       blvlight
 // @match        https://*.csdn.net/*
