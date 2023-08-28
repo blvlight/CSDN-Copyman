@@ -80,6 +80,7 @@
     }
   })
 
+  
   useDomHighlight(document.querySelector('article'));
   window.addEventListener('click', handleClick);
 })();
