@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CSDN Copyman
 // @namespace    http://tampermonkey.net/
-// @version      0.1.4
+// @version      0.1.5
 // @description  Press S and click to copy without login
 // @author       blvlight
 // @match        https://*.csdn.net/*
@@ -24,7 +24,7 @@
     function handleMouseOver(e) {
       e.stopPropagation();
       if (e.ctrlKey) {
-        const cur = e.target;
+        const cur = window.getComputedStyle(e.target);
         s.width = cur.clientWidth + 'px';
         s.height = cur.clientHeight + 'px';
         s.top = cur.offsetTop + 'px';
@@ -71,6 +71,14 @@
       }
     }
   }
+
+  window.addEventListener('mousemove', function () {
+    const sb = document.querySelector('.imgViewDom');
+    if (sb) {
+      sb.innerHTML = '';
+      sb.classList.remove('imgViewDom');
+    }
+  })
 
   useDomHighlight(document.querySelector('article'));
   window.addEventListener('click', handleClick);
