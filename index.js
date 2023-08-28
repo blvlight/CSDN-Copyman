@@ -25,8 +25,8 @@
       e.stopPropagation();
       if (e.ctrlKey) {
         const cur = e.target;
-        s.width = cur.clientWidth + 'px';
-        s.height = cur.clientHeight + 'px';
+        s.width = cur.offsetWidth + 'px';
+        s.height = cur.offsetHeight + 'px';
         s.top = cur.offsetTop + 'px';
         s.left = cur.offsetLeft + 'px';
       } 
@@ -62,7 +62,11 @@
   
   function handleClick(e) {
     if (e.ctrlKey) {
-      const text = e.target?.innerHTML.replace(/<.*?>/, '');
+      const text = e.target?.innerHTML
+      .replace(/<.*?>/, '')
+      .replace('&nbsp;', ' ')
+      .replace('&lt;', '<')
+      .replace('&rt;', '>');
       if (text) {
         console.log(`from CSDNcopyman - You can check your copy text in '[]':\n[\n${text}\n]\n----${new Date().toLocaleString()}`);
         navigator.clipboard.writeText(text).then(() => alert(`复制内容：\n${text}`));
@@ -80,7 +84,7 @@
     }
   })
 
-  
+
   useDomHighlight(document.querySelector('article'));
   window.addEventListener('click', handleClick);
 })();
