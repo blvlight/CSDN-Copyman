@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CSDN Copyman
 // @namespace    http://tampermonkey.net/
-// @version      0.1.5
+// @version      0.1.6
 // @description  Press S and click to copy without login
 // @author       blvlight
 // @match        https://*.csdn.net/*
@@ -24,7 +24,7 @@
     function handleMouseOver(e) {
       e.stopPropagation();
       if (e.ctrlKey) {
-        const cur = window.getComputedStyle(e.target);
+        const cur = e.target;
         s.width = cur.clientWidth + 'px';
         s.height = cur.clientHeight + 'px';
         s.top = cur.offsetTop + 'px';
