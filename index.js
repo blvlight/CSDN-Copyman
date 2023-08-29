@@ -2,7 +2,7 @@
 // @name         CSDN Copyman
 // @namespace    http://tampermonkey.net/
 // @version      0.1.6
-// @description  Press S and click to copy without login
+// @description  Press ctrl and click to copy without login
 // @author       blvlight
 // @match        https://*.csdn.net/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
